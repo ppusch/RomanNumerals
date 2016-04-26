@@ -8,7 +8,11 @@ namespace RomanNumerals
     {
         Dictionary<int, string> romanSymbols = new Dictionary<int,string>
             {
-                {1,"I"}, {4,"IV"}, {5,"V"}
+                {1,"I"},
+                { 4,"IV"},
+                { 5,"V"},
+                { 9,"IX"},
+                { 10,"X"}
             };
         public string ConvertToRomanNumber(int arabicNumber)
         {

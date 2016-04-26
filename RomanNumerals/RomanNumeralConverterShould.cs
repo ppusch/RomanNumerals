@@ -74,6 +74,22 @@ namespace RomanNumerals
             Check.That(romanNumeralConverter.ConvertToRomanNumber(8)).Equals("VIII");
         }
 
+        [Test]
+        public void return_IX_when_Arabic_Number_Is_9()
+        {
+            var romanNumeralConverter = new RomanNumeralConverter();
+
+            Check.That(romanNumeralConverter.ConvertToRomanNumber(9)).Equals("IX");
+        }
+
+        [Test]
+        public void return_X_when_Arabic_Number_Is_10()
+        {
+            var romanNumeralConverter = new RomanNumeralConverter();
+
+            Check.That(romanNumeralConverter.ConvertToRomanNumber(10)).Equals("X");
+        }
+
 
     }
 }
