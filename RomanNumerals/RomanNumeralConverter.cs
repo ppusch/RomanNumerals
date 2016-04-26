@@ -1,38 +1,25 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 namespace RomanNumerals
 {
     public class RomanNumeralConverter
     {
+        Dictionary<int, string> romanSymbols = new Dictionary<int,string>
+            {
+                {1,"I"}, {4,"IV"}, {5,"V"}
+            };
         public string ConvertToRomanNumber(int arabicNumber)
         {
-            if (arabicNumber == 1)
+            StringBuilder resultBuilder = new StringBuilder();
+            while (arabicNumber > 0)
             {
-                return "I";
+                var arabicValue = romanSymbols.Keys.Where(value => value <= arabicNumber).Max();
+                resultBuilder.Append(romanSymbols[arabicValue]);
+                arabicNumber = arabicNumber - arabicValue;
             }
-            if (arabicNumber ==3)
-            {
-                return "III";
-            }
-            if (arabicNumber ==4)
-            {
-                return "IV";
-            }
-            if (arabicNumber ==5)
-            {
-                return "V";
-            }
-            if (arabicNumber ==6)
-            {
-                return "VI";
-            }
-            if (arabicNumber ==7)
-            {
-                return "VII";
-            }
-            if (arabicNumber ==8)
-            {
-                return "VIII";
-            }
-            return "II";
+            return resultBuilder.ToString();
         }
     }
 }
